@@ -3,7 +3,7 @@ class DownloadsController < ApplicationController
 
   # GET /downloads
   def index
-    @downloads = Download.all
+    @downloads = Download.all.order('created_at DESC')
   end
 
   # GET /downloads/1
