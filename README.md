@@ -14,6 +14,12 @@ on a per file basis. Pure awesomesauce.
 ## Getting started
 * Upload all the files you want to be served into public/files
 * Downloading a file will create a new database record for that file.
+* Set up the folling ENV variables on your system
+
+    export MAX_DOWNLOAD_COUNT=1
+    export AUTO_DELETE_AFTER_DAYS=5
+    export SECRET_KEY_MANAGE_FILES=mysecretkey
+
 
 ## TODO
 * Make it work with S3 or other storage service.
