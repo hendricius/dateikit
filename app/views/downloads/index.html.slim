@@ -1,21 +1,26 @@
-h1 Listing downloads
-
-table.table
+h3 Available downloads
+table.table.table-bordered.table-controls.table-striped
   tr
     th Download count
     th Allowed downloads
     th Expires at
     th Short url
-    th
-    th
-    th
+    th Controls
 
   - @downloads.each do |download|
     tr
-      td = download.download_count
-      td = download.allowed_downloads
-      td = download.expires_at
-      td = download.short_url
-      td = link_to 'Delete', download, :confirm => 'Are you sure?', :method => :delete
+      td= with_x download.download_count
+      td= download.allowed_downloads
+      td= download.expires_at
+      td= download.short_url
+      td
+        .btn-group
+          = link_to download_download_path(download), class: "btn" do
+            i.icon-download
+            = whitespace 'Download'
+          = link_to download, class: "btn", :confirm => 'Are you sure?',
+            :method => :delete do
+            i.icon-remove
+            = whitespace 'Remove'
 
 br
