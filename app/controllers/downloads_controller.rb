@@ -1,5 +1,8 @@
 class DownloadsController < ApplicationController
+
   before_action :set_download, only: [:show, :edit, :update, :destroy]
+
+  skip_before_filter :check_auth_token, only: [:download]
 
   # GET /downloads
   def index

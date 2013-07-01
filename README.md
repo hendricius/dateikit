@@ -12,14 +12,34 @@ on a per file basis. Pure awesomesauce.
 * The file should self destruct once downloaded by the other party.
 
 ## Getting started
-* Upload all the files you want to be served into public/files
-* Downloading a file will create a new database record for that file.
 * Set up the folling ENV variables on your system
 
     export MAX_DOWNLOAD_COUNT=1
     export AUTO_DELETE_AFTER_DAYS=5
     export SECRET_KEY_MANAGE_FILES=mysecretkey
 
+* Install all the gems
+
+    bundle install
+
+* Start rails
+
+    rails s
+
+## Using the App
+
+* Add a file by copying it via ftp/scp whatever you prefer. Place them in:
+
+    public/files
+
+* Download the file via
+
+    http://localhost:3000/f/filename
+
+* To change file download limits, open the downloads page with the token:
+
+    http://localhost:3000/downloads?token=mysecretkey
 
 ## TODO
+* Cronjob to delete old files.
 * Make it work with S3 or other storage service.

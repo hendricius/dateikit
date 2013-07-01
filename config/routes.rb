@@ -8,6 +8,6 @@ Dateikit::Application.routes.draw do
   match '/f/:filename' => 'downloads#download',
     constraints: { filename: /.*/ }, via: :get
 
-  root "downloads#index"
+  root "static#home"
 
 end
