@@ -50,3 +50,6 @@ group :development, :test do
   gem 'pry'
   gem 'quiet_assets'
 end
+
+gem 'fuchsi', git: 'https://github.com/Foxtacles/fuchsi-gem'
+

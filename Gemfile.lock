@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/Foxtacles/fuchsi-gem
+  revision: bf8dd32534420b72579dafa53ce9f8973c977074
+  specs:
+    fuchsi (1.0)
+
+GIT
   remote: https://github.com/bokmann/font-awesome-rails.git
   revision: 5d69652b358c32e4192b1671ef6138328a5efe0a
   specs:
@@ -165,6 +171,7 @@ DEPENDENCIES
   bourbon
   coffee-rails (~> 4.0.0)
   font-awesome-rails!
+  fuchsi!
   jquery-rails
   jquery-turbolinks
   pry
