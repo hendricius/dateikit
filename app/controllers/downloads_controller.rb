@@ -46,7 +46,9 @@ class DownloadsController < ApplicationController
   end
 
   def download
-    
+    @download = Download.filename_or_id(filename: params[:filename], id: params[:id])
+    # FIXME make this work
+    render nothing: true
   end
 
   private
