@@ -1,6 +1,6 @@
 h1 Listing downloads
 
-table
+table.table
   tr
     th Download count
     th Allowed downloads
@@ -16,8 +16,6 @@ table
       td = download.allowed_downloads
       td = download.expires_at
       td = download.short_url
-      td = link_to 'Show', download
-      td = link_to 'Edit', edit_download_path(download)
-      td = link_to 'Destroy', download, :confirm => 'Are you sure?', :method => :delete
+      td = link_to 'Delete', download, :confirm => 'Are you sure?', :method => :delete
 
 br

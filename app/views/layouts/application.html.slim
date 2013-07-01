@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= "Dateikit"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'
+
+    = csrf_meta_tags
+
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to '', class: "brand" do
+            i.icon-file
+            span DATEIKIT
+
+    .container#main-container
+      .row
+        .span12
+          = yield
