@@ -1,4 +1,4 @@
-# Dateikit
+# Datekit
 
 Dateikit makes file sharing in teams awesome. scp your files to the server and
 automatically have the files delete once they were downloaded. Can be changed
@@ -45,3 +45,4 @@ It also works nicely with the Dropzone App for mac. Just use the built in scp fu
 ## TODO
 * Cronjob to delete old files.
 * Make it work with S3 or other storage service.
+* Todo rename rails application files to Datekit
