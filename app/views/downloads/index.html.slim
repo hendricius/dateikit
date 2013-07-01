@@ -23,9 +23,7 @@ table.table.table-bordered.table-controls.table-striped
           = link_to edit_download_path(download), class: "btn" do
             i.icon-edit
             = whitespace 'Edit'
-          = link_to download, class: "btn", :confirm => 'Are you sure?',
+          = link_to download, class: "btn", data: { confirm: "Deletion can not be undone" },
             :method => :delete do
             i.icon-remove
             = whitespace 'Remove'
-
-br
