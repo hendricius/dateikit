@@ -44,7 +44,7 @@ class Download < ActiveRecord::Base
   end
 
   def allowed_to_download?
-    download_count <= allowed_downloads
+    download_count < allowed_downloads
   end
 
   def should_destroy?
