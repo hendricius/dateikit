@@ -1,5 +1,14 @@
 class Download < ActiveRecord::Base
 
+  MAX_DOWNLOAD_COUNT = ENV["MAX_DOWNLOAD_COUNT"] || 1
+  AUTO_DELETE_AFTER = ENV["AUTO_DELETE_AFTER"] || 5
+
+  validates :filename, :download_count, :allowed_downloads, presence: true
+  validates :filename, uniqueness: true
+  validates :allowed_downloads, numericality: {greater_than: 0, less_than: 100000}
+
+  before_validation :set_initial_values, on: :create
+
   def self.filename_or_id(filename: nil, id: nil)
     return unless :filename && :id
     return find(id) if id
@@ -26,6 +35,15 @@ class Download < ActiveRecord::Base
 
   def path
     "public/files/#{filename}"
+  end
+
+  private
+
+  def set_initial_values
+    self.download_count = 0
+    self.allowed_downloads = MAX_DOWNLOAD_COUNT
+    self.expires_at = Time.now + AUTO_DELETE_AFTER.days
+    true
   end
 
 end

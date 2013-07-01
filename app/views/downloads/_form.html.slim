@@ -1,21 +1,5 @@
-= form_for @download do |f|
-  - if @download.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@download.errors.count, "error")} prohibited this download from being saved:"
-      ul
-        - @download.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :download_count
-    = f.number_field :download_count
-  .field
-    = f.label :allowed_downloads
-    = f.number_field :allowed_downloads
-  .field
-    = f.label :expires_at
-    = f.datetime_select :expires_at
-  .field
-    = f.label :short_url
-    = f.text_field :short_url
-  .actions = f.submit 'Save'
+= simple_form_for @download do |f|
+  = f.input :allowed_downloads
+  = f.input :expires_at
+  .form-actions
+    = f.button :submit

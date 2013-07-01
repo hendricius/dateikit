@@ -1,6 +1,7 @@
 h3 Available downloads
 table.table.table-bordered.table-controls.table-striped
   tr
+    th Filename
     th Download count
     th Allowed downloads
     th Expires at
@@ -9,6 +10,7 @@ table.table.table-bordered.table-controls.table-striped
 
   - @downloads.each do |download|
     tr
+      td= link_to download.filename, download_download_path(download)
       td= with_x download.download_count
       td= download.allowed_downloads
       td= download.expires_at
@@ -18,6 +20,9 @@ table.table.table-bordered.table-controls.table-striped
           = link_to download_download_path(download), class: "btn" do
             i.icon-download
             = whitespace 'Download'
+          = link_to edit_download_path(download), class: "btn" do
+            i.icon-edit
+            = whitespace 'Edit'
           = link_to download, class: "btn", :confirm => 'Are you sure?',
             :method => :delete do
             i.icon-remove

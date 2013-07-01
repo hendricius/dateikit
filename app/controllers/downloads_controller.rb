@@ -33,7 +33,7 @@ class DownloadsController < ApplicationController
   # PATCH/PUT /downloads/1
   def update
     if @download.update(download_params)
-      redirect_to @download, notice: 'Download was successfully updated.'
+      redirect_to downloads_path, notice: 'Download was successfully updated.'
     else
       render action: 'edit'
     end
@@ -62,6 +62,6 @@ class DownloadsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def download_params
-      params.require(:download).permit(:download_count, :allowed_downloads, :expires_at, :short_url)
+      params.require(:download).permit(:allowed_downloads, :expires_at)
     end
 end

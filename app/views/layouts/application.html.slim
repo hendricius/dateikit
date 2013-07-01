@@ -12,11 +12,13 @@ html
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          = link_to '', class: "brand" do
+          = link_to downloads_path, class: "brand" do
             i.icon-file
             span DATEIKIT
+
 
     .container#main-container
       .row
         .span12
+          = render "layouts/notices"
           = yield
