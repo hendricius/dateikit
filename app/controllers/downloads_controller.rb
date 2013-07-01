@@ -47,8 +47,11 @@ class DownloadsController < ApplicationController
 
   def download
     @download = Download.filename_or_id(filename: params[:filename], id: params[:id])
-    # FIXME make this work
-    render nothing: true
+    if @download
+      send_file @download.path
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 
   private
