@@ -5,7 +5,7 @@ Dateikit::Application.routes.draw do
     end
   end
 
-  match '/:filename' => 'downloads#download',
+  match '/f/:filename' => 'downloads#download',
     constraints: { filename: /.*/ }, via: :get
 
 end
