@@ -1,4 +1,4 @@
-# Datekit
+# DATEIKIT
 
 Dateikit makes file sharing in teams awesome. scp your files to the server and
 automatically have the files delete once they were downloaded. Can be changed
