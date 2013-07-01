@@ -40,6 +40,8 @@ on a per file basis. Pure awesomesauce.
 
     http://localhost:3000/downloads?token=mysecretkey
 
+It also works nicely with the Dropzone App for mac. Just use the built in scp functionality. Drag file on Dropzone, copy link. Done.
+
 ## TODO
 * Cronjob to delete old files.
 * Make it work with S3 or other storage service.
