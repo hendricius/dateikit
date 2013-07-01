@@ -44,5 +44,7 @@ It also works nicely with the Dropzone App for mac. Just use the built in scp fu
 
 ## TODO
 * Cronjob to delete old files.
+* File system events, reset download count when file added again.
+* Better download not allowed message.
 * Make it work with S3 or other storage service.
 * Todo rename rails application files to Datekit
