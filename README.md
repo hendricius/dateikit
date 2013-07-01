@@ -12,31 +12,31 @@ on a per file basis. Pure awesomesauce.
 * The file should self destruct once downloaded by the other party.
 
 ## Getting started
-* Set up the folling ENV variables on your system
+Set up the folling ENV variables on your system
 
     export MAX_DOWNLOAD_COUNT=1
     export AUTO_DELETE_AFTER_DAYS=5
     export SECRET_KEY_MANAGE_FILES=mysecretkey
 
-* Install all the gems
+Install all the gems
 
     bundle install
 
-* Start rails
+Start rails
 
     rails s
 
 ## Using the App
 
-* Add a file by copying it via ftp/scp whatever you prefer. Place them in:
+Add a file by copying it via ftp/scp whatever you prefer. Place them in:
 
     public/files
 
-* Download the file via
+Download the file via
 
     http://localhost:3000/f/filename
 
-* To change file download limits, open the downloads page with the token:
+To change file download limits, open the downloads page with the token:
 
     http://localhost:3000/downloads?token=mysecretkey
 
