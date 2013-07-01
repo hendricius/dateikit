@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130701160833) do
+ActiveRecord::Schema.define(version: 20130701172855) do
 
   create_table "downloads", force: true do |t|
     t.integer  "download_count"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130701160833) do
     t.string   "short_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filename"
   end
 
 end
