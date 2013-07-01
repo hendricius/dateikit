@@ -11,15 +11,14 @@ class Download < ActiveRecord::Base
     return file if file
     file_list = get_list_of_files
     return unless file_list
-    file_names = file_list.map{|file_and_path| file_and_path.split("/").last}
-    exists_locally = file_names.include?(filename)
+    exists_locally = get_list_of_files.include?(filename)
     return unless exists_locally
     create(filename: filename)
   end
 
   def self.get_list_of_files
     begin
-      Dir.glob("public/files/*")
+      Dir.glob("public/files/*").map{|file_and_path| file_and_path.split("/").last}
     rescue
       nil
     end
