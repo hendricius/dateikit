@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Download count:
+  = @download.download_count
+p
+  strong Allowed downloads:
+  = @download.allowed_downloads
+p
+  strong Expires at:
+  = @download.expires_at
+p
+  strong Short url:
+  = @download.short_url
+
+= link_to 'Edit', edit_download_path(@download)
+'|
+= link_to 'Back', downloads_path

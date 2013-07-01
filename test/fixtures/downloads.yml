@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  download_count: 1
+  allowed_downloads: 1
+  expires_at: 2013-07-01 18:08:33
+  short_url: MyString
+
+two:
+  download_count: 1
+  allowed_downloads: 1
+  expires_at: 2013-07-01 18:08:33
+  short_url: MyString

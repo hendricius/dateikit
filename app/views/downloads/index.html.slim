@@ -1,0 +1,25 @@
+h1 Listing downloads
+
+table
+  tr
+    th Download count
+    th Allowed downloads
+    th Expires at
+    th Short url
+    th
+    th
+    th
+
+  - @downloads.each do |download|
+    tr
+      td = download.download_count
+      td = download.allowed_downloads
+      td = download.expires_at
+      td = download.short_url
+      td = link_to 'Show', download
+      td = link_to 'Edit', edit_download_path(download)
+      td = link_to 'Destroy', download, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Download', new_download_path
