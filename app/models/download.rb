@@ -37,6 +37,20 @@ class Download < ActiveRecord::Base
     "public/files/#{filename}"
   end
 
+  def send_update_download
+    self.download_count += 1
+    save
+    path
+  end
+
+  def allowed_to_download?
+    download_count <= allowed_downloads
+  end
+
+  def should_destroy?
+    download_count >= allowed_downloads || Time.now >= expires_at
+  end
+
   private
 
   def set_initial_values

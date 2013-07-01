@@ -47,21 +47,22 @@ class DownloadsController < ApplicationController
 
   def download
     @download = Download.filename_or_id(filename: params[:filename], id: params[:id])
-    if @download
-      send_file @download.path
+    if @download && @download.allowed_to_download?
+      send_file @download.send_update_download
     else
       raise ActionController::RoutingError.new('File could not be found or has been deleted.')
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_download
-      @download = Download.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_download
+    @download = Download.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def download_params
-      params.require(:download).permit(:allowed_downloads, :expires_at)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def download_params
+    params.require(:download).permit(:allowed_downloads, :expires_at)
+  end
+
 end
