@@ -50,7 +50,7 @@ class DownloadsController < ApplicationController
     if @download
       send_file @download.path
     else
-      raise ActionController::RoutingError.new('Not Found')
+      raise ActionController::RoutingError.new('File could not be found or has been deleted.')
     end
   end
 
